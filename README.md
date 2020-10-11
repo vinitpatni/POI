@@ -10,6 +10,10 @@
    
 2. We can dockerize it and deploy them on orchestration engine either(Kubernetes or Docker swarm). We can scale in and scale out these containers as per requirement and depending on the current load in the cloud. 
 
+## Load Balancer
+
+1. LB will act as reverse proxy between Packet Gateway service and car endpoints. It will load balance the request coming from car endpoints. In this manner we can maintain high availability of the can tolerate outage of instances of packet gateway service
+
 ## Packet Handler Service
 
 1. This service is responsible for handling actual data packets.
