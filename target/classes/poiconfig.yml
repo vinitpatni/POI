@@ -1,0 +1,26 @@
+package.handler.service:
+  validator:
+    - ruleId: rule1
+      description: "Data shared by car contains POI name, valid category"
+      handler.class: com.tomtom.poi.validations.impl.ValidCategoryRule
+
+    - ruleId: rule2
+      description: "Location where POI is reported is not on a water body."
+      handler.class: com.tomtom.poi.validations.impl.POIOnRoadRule
+
+    - ruleId: rule3
+      description: "Petrol pump POI is within ‘x’ mtrs to a road"
+      handler.class: com.tomtom.poi.validations.impl.ValidDistanceFromPetrolPumpRule
+
+  producer.configs:
+    - name: packet-handler-topic-config
+      bootstrap.servers: localhost:2345
+      topic: packet-handler-topic
+      key.serializer: org.apache.kafka.common.serialization.StringSerializer
+        # Serializer class for value that implements the Serializer interface.
+      value.serializer: org.apache.kafka.common.serialization.StringSerializer
+      acks: all
+      compression.type: snappy
+      max.request.size: 157286400
+      buffer.memory: 524288000
+
