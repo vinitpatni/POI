@@ -12,7 +12,7 @@
 
 ## Load Balancer
 
-1. LB will act as reverse proxy between Packet Gateway service and car endpoints. It will load balance the request coming from car endpoints. In this manner we can maintain high availability of the can tolerate outage of instances of packet gateway service
+1. LB will act as reverse proxy between Packet Gateway service and car endpoints. It will load balance the request coming from car endpoints. In this manner we can maintain high availability of the system and can tolerate outage of instances of packet gateway service
 
 ## Packet Handler Service
 
